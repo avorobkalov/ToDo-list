@@ -1,8 +1,12 @@
 package com.softserve.itacademy.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-
+@Getter
+@Setter
 public class TaskDto {
     private long id;
 
@@ -26,46 +30,6 @@ public class TaskDto {
         this.name = name;
         this.priority = priority;
         this.todoId = todoId;
-        this.stateId = stateId;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPriority() {
-        return priority;
-    }
-
-    public void setPriority(String priority) {
-        this.priority = priority;
-    }
-
-    public long getTodoId() {
-        return todoId;
-    }
-
-    public void setTodoId(long todoId) {
-        this.todoId = todoId;
-    }
-
-    public long getStateId() {
-        return stateId;
-    }
-
-    public void setStateId(long stateId) {
         this.stateId = stateId;
     }
 }

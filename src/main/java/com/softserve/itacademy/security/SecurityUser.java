@@ -1,12 +1,13 @@
 package com.softserve.itacademy.security;
 
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-
+@Data
 public class SecurityUser implements UserDetails {
 
     private final long id;
@@ -61,17 +62,4 @@ public class SecurityUser implements UserDetails {
     public boolean isEnabled() {
         return isActive;
     }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
 }
