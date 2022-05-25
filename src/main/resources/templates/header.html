@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="col-sm-12">
+                    <h3>
+                        Hello, <a th:href="@{|/users/${currentUser.getId()}/read|}"  th:text="${currentUser.getFirstName()}"></a>
+                    </h3>
+                </div>
+            </div>
+            <div align="center">
+                <a class="btn-info btn-lg" th:href="@{/main}">   Home Page   </a>
+
+                <a class="btn-info btn-lg" th:href="@{|/todos/all/users/${currentUser.getId()}|}">   My To-Dos   </a>
+                <a sec:authorize="hasAuthority('admin-access')">
+
+                    <a class="btn-info btn-lg" th:href="@{/}"> List of Users </a>
+                </a>
+            </div>
+            <form th:action="@{/logout}" method="get">
+                <div align="right">
+                    <input class="btn-info btn-lg" type="submit" value="LogOut">
+                </div>
+            </form>
+        </div>
+    </nav>
+</div>
